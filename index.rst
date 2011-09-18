@@ -34,8 +34,11 @@ J'espère que ce document trouvera lecteurs, bien que ce soit mon premier
 "ebook".
 
 -- Nicolas Paris
+
+.. _`Github`: https://github.com/Nic0/python_en_action
  
 .. [1] http://creativecommons.org/licenses/by-sa/2.0/fr/
+.. [2] https://github.com/Nic0/python_en_action
 
 Utilisation de Modules
 ----------------------
