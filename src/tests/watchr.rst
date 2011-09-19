@@ -6,7 +6,7 @@ Autotest avec Watchr
 Introduction
 ------------
 
-`Watchr`_ est un petit utilitaire pouvant être très pratique, il permet
+`Watchr`_ [1]_est un petit utilitaire pouvant être très pratique, il permet
 d'automatiser des tests à la sauvegarde de fichier. Bien qu'il soit écrit en
 Ruby, il peut être utilisé avec n'importe quel langage, je m'en suis servis par
 exemple pour Symfony2 (avec PHPUnit), mais plus récemment avec Python. Voici
