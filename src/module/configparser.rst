@@ -109,14 +109,14 @@ comment le faire de vous même.
     nom = config.get('user', 'nom')
 
 C'est là qu'on lit vraiment les variables, un détail à noté, tout comme on peut
-le deviner par la suite, la variable age est considéré comme une chaine de
+le deviner par la suite, la variable ``age`` est considéré comme une chaine de
 caractère, et non comme un nombre à part entière, dans l'état il ne serait pas
 possible d'effectuer des calcules dessus, mais pouvant être convertie facilement
 de la sorte::
 
     age = int(config.get('user', 'age'))
 
-De la sorte, age est maintenant effectivement un entier, et nous pourrions en
+De la sorte, ``age`` est maintenant effectivement un entier, et nous pourrions en
 faire toute sorte de calculs afin de trouver l'âge du capitaine.
 
 Je ne pense pas que le reste ait besoin de plus d'explication, plusieurs
