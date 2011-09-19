@@ -101,8 +101,8 @@ grâce à cet objet que tout va se jouer.
 Nous indiquons ici quel est le fichier de configuration que nous utilisons.
 Pour simplifier l'affaire, le fichier est en relatif (par rapport à l'endroit
 d'où est exécuté le programme), et surtout, il n'y a pas de vérification que le
-fichier existe, ni qu'il est lu correctement. Je suis sûr que vous trouverez à
-le faire de vous même.
+fichier existe, ni qu'il est lu correctement. Je suis sûr que vous trouverez
+comment le faire de vous même.
 
 ::
 
