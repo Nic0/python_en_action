@@ -7,8 +7,8 @@ Python en Action
 Ce document est issue principalement de billets pris sur mon blog, revu pour
 l'occasion. Aillant depuis quelques temps cumulé des suites de petits tutoriels
 un peu sous forme de recettes, je pense qu'il pouvait être intéressant de
-les réunir sous un format PDF. Ce format s'y prêté plutôt bien, du fait
-d'avoir traité quelques thèmes sous différents aspect, notamment avec la
+les réunir sous un format PDF. Ce format s'y prêtait plutôt bien, du fait
+d'avoir traité quelques thèmes sous différents aspects, notamment avec la
 partie Ncurses et Tests Unitaires. Le style est certainement plus celui
 utilisé pour un blog, bien que j'en ai apporté quelques modifications pour
 garder une cohérence.

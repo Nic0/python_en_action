@@ -4,7 +4,7 @@ Consulter la documentation en local
 ===================================
 
 L'idée est de lire la documentation de tout les modules dans un navigateur,
-qu'ils soient natif à Python ou installer implicitement, le tout en locale.
+qu'ils soient natif à Python ou installée implicitement, le tout en local.
 Plusieurs avantages à ça :
 
 - Avoir toujours la documentation correspondante à la version installée

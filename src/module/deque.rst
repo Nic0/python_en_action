@@ -9,8 +9,8 @@ Introduction
 En programmation, les `piles`_ [1]_ et `files`_ [2]_, aka LIFO (last in, first
 out) et FIFO (first in, first out) sont des incontournables. Il s'agit de
 stocker des données, et surtout de l'ordre dans lequel on récupère celle-ci.
-Pour information, j'avais écris `Exemple de file avec deux pointeurs en langage
-C`_ [3]_ qui est un exemple de liste chaînée utilisé comme une file en C.
+Pour information, j'avais écrit `Exemple de file avec deux pointeurs en langage
+C`_ [3]_ qui est un exemple de liste chaînée utilisée comme une file en C.
 
 Comme Python est un langage de haut niveau, il offre une façon simple de mettre en
 place l'un ou l'autre. On va voir qu'il correspond à une classe du module
@@ -26,7 +26,7 @@ préférable d'utiliser *deque* si l'on sait qu'on l'utilise comme fifo ou lifo.
 Utilisation
 -----------
 
-Rien de bien compliqué, regardons cette suite de commande effectuer directement
+Rien de bien compliqué, regardons cette suite de commande effectuée directement
 avec l'interpréteur.
 
 - Fonctionnement comme pile (lifo)
@@ -75,7 +75,7 @@ ce module`_ [4]_.
 
 Ce module est assez simple à prendre en main, mais toujours utile si on sait
 qu'on veut mettre en place rapidement une fifo ou lifo. Ce n'est qu'une méthode
-parmis d'autre pour obtenir ce que l'on souhaite, mai l'avantage de *deque* est
+parmi d'autre pour obtenir ce que l'on souhaite, mai l'avantage de *deque* est
 d'être très simple à l'emploi, tout en étant plus performant. Éventuellement,
 pour les plus curieux, l'utilisation de `queue.LifoQueue` pourrait intéresser,
 mais l'idée ici était de garder une utilisation simplifié au maximum.

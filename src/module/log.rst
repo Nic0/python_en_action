@@ -4,7 +4,7 @@ Tenir un fichier de log
 =======================
 
 Il est souvent utile de tenir un fichier de log dans plusieurs situations,
-comme archiver différentes erreurs, ou même pour les débugs. Python fournis
+comme archiver différentes erreurs, ou même pour les débugs. Python fournit
 nativement `un module`_ [1]_ très bien fait et complet pour faire cela, avec
 une redirection de l'information soit en console ou dans un fichier, et
 permettant plusieurs niveaux d'importance de logs, du message de débug aux
