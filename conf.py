@@ -179,6 +179,7 @@ latex_elements = {
         #'fontpkg':      r'\usepackage{mathpazo}',
         'papersize':    'a4paper',
         'babel': '\\usepackage[english,french]{babel}',
+        'fncychap': '\\usepackage[Sonny]{fncychap}',
         'pointsize':    '12pt',
         'preamble':     r'\usepackage{style}',
         'inputenc':     r'\usepackage[utf8]{inputenc}',
