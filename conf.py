@@ -177,8 +177,8 @@ htmlhelp_basename = 'PythonetCursesdoc'
 
 latex_elements = {
         #'fontpkg':      r'\usepackage{mathpazo}',
-        'babel':        '\\usepackage{babel}',
         'papersize':    'a4paper',
+        'babel': '\\usepackage[english,french]{babel}',
         'pointsize':    '12pt',
         'preamble':     r'\usepackage{style}',
         'inputenc':     r'\usepackage[utf8]{inputenc}',
