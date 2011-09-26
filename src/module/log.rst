@@ -6,12 +6,12 @@ Tenir un fichier de log
 Il est souvent utile de tenir un fichier de log dans plusieurs situations,
 comme archiver différentes erreurs, ou même pour les débugs. Python fournit
 nativement `un module`_ [1]_ très bien fait et complet pour faire cela, avec
-une redirection de l'information soit en console ou dans un fichier, et
+une redirection de l'information soit en console, soit dans un fichier, et
 permettant plusieurs niveaux d'importance de logs, du message de débug aux
 erreurs critiques.
 
-Ce module permet d'aller bien plus loin de ce que j'en aurai besoin, comme un
-serveur de log pour centraliser les logs de clients, des logs tournantes ou
+Ce module permet d'aller bien plus loin de ce que j'en aurais besoin, comme un
+serveur de log pour centraliser les logs de clients, des logs tournants ou
 encore l'envoi de journaux par SMTP (mail). Il n'est pas question ici de tout
 voir. Une petite introduction qui permet de tenir simplement un fichier de log,
 pour une prise main rapide.
