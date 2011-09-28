@@ -17,19 +17,25 @@ Utiliser un fichier de configuration permet d'obtenir une application plus
 souple, si vous faites un choix arbitraire dans votre programme, demandez-vous
 s'il ne serait pas plus efficace de l'extraire, et de le mettre en tant que
 paramètre, modifiable par l'utilisateur. D'une part il est plus agréable de les
-manipuler de façon séparée et regroupée, et surtout cela évite qu'un utilisateur voulant changer une variable le fasse en fouillant dans le code, au risque de modifier un mauvais paramètre par mégarde dans votre code source. 
+manipuler de façon séparée et regroupée, et surtout cela évite qu'un
+utilisateur voulant changer une variable le fasse en fouillant dans le code, au
+risque de modifier un mauvais paramètre par mégarde dans votre code source. 
 
 Présentation du module ConfigParser
 -----------------------------------
 
 Puisqu'un module existe pour Python, autant l'utiliser. Un des avantages est
-d'avoir la possibilité de commenter vos configurations en commençant par `# (dièse)` ou `; (point-virgule)` une ligne, celle-ci sera ignorée.  Le fichier suit une structure assez simple, qu'on retrouve régulièrement, basé sur un système de section, et d'arguments/valeurs. Pour résumer en un schéma::
+d'avoir la possibilité de commenter vos configurations en commençant par `#
+(dièse)` ou `; (point-virgule)` une ligne, celle-ci sera ignorée.  Le fichier
+suit une structure assez simple, qu'on retrouve régulièrement, basé sur un
+système de section, et d'arguments/valeurs. Pour résumer en un schéma::
 
     [my_section]
     coin = pan
     answer = 42
 
-On peut de la sorte avoir plusieurs noms de section et ce n'est là que pour donner une idée basique du module.
+On peut de la sorte avoir plusieurs noms de section et ce n'est là que pour
+donner une idée basique du module.
 
 Lire dans un fichier de configuration
 -------------------------------------
@@ -102,11 +108,16 @@ comment le faire de vous même.
 
     nom = config.get('user', 'nom')
 
-C'est là qu'on lit vraiment les variables, un détail à noter, tout comme on peut le deviner par la suite, la variable ``age`` est considérée comme une chaine de caractère, et non comme un nombre à part entière, dans l'état il ne serait pas possible d'effectuer des calculs dessus, mais pouvant être convertie facilement de la sorte::
+C'est là qu'on lit vraiment les variables, un détail à noter, tout comme on
+peut le deviner par la suite, la variable ``age`` est considérée comme une
+chaine de caractère, et non comme un nombre à part entière, dans l'état il ne
+serait pas possible d'effectuer des calculs dessus, mais pouvant être convertie
+facilement de la sorte::
 
     age = int(config.get('user', 'age'))
 
-De la sorte, ``age`` est maintenant effectivement un entier, et nous pourrions faire toute sorte de calculs afin de trouver l'âge du capitaine.
+De la sorte, ``age`` est maintenant effectivement un entier, et nous pourrions
+faire toute sorte de calculs afin de trouver l'âge du capitaine.
 
 Je ne pense pas que le reste ait besoin de plus d'explication, plusieurs
 remarques cependant.
@@ -211,7 +222,8 @@ observe le résultat en ouvrant le fichier conf.rc, il contient exactement ce
 qu'on attendait.
 
 Pour les explications, plus courte cette fois-ci. On voit qu'on rajoute la
-section avec la méthode `add_section`, pour laquelle on affecte les options avec la méthode `set` qui prend trois arguments::
+section avec la méthode `add_section`, pour laquelle on affecte les options
+avec la méthode `set` qui prend trois arguments::
 
     config.set(section, options, valeur)
 
@@ -250,7 +262,9 @@ fichier contenant ce dictionnaire et sous forme `option = valeur`.
 
 Voilà, cette introduction au module ConfigParser [1]_ touche à sa fin, C'est un
 module qui n'est pas compliqué à prendre en main, il est conseillé de lire la
-documentation fournie pour de plus amples détails. En espérant motiver certains à utiliser un fichier de configuration plutôt que d'écrire « en dur » les variables directement dans le fichier source.
+documentation fournie pour de plus amples détails. En espérant motiver certains
+à utiliser un fichier de configuration plutôt que d'écrire « en dur » les
+variables directement dans le fichier source.
 
 .. _`ConfigParser`: http://docs.python.org/library/configparser.html
 .. [1] http://docs.python.org/library/configparser.html

@@ -19,7 +19,8 @@ pour une prise main rapide.
 Les niveaux de message
 -----------------------
 
-Le module définit plusieurs niveaux d'importance dans les messages, qui sont dans l'ordre croissant :
+Le module définit plusieurs niveaux d'importance dans les messages, qui sont
+dans l'ordre croissant :
 
 - Debug
 - Info
@@ -74,8 +75,10 @@ ligne suivante::
 
     logging.basicConfig(filename="prog.log",level=logging.DEBUG)
 
-On exécute et regarde le fichier *prog.log*, on obtient exactement ce à quoi l'on s'attendait : les deux messages. Par simplicité, le fichier est renseigné par un chemin relatif, et se retrouve donc à l'endroit de l'exécution du programme.
-On pourrait mettre un chemin absolu, en concaténant des variables
+On exécute et regarde le fichier *prog.log*, on obtient exactement ce à quoi
+l'on s'attendait : les deux messages. Par simplicité, le fichier est renseigné
+par un chemin relatif, et se retrouve donc à l'endroit de l'exécution du
+programme.  On pourrait mettre un chemin absolu, en concaténant des variables
 d'environnement.
 
 Logger les variables
