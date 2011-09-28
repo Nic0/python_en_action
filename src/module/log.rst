@@ -16,11 +16,10 @@ encore l'envoi de journaux par SMTP (mail). Il n'est pas question ici de tout
 voir. Une petite introduction qui permet de tenir simplement un fichier de log,
 pour une prise main rapide.
 
-Les niveaux de messages
+Les niveaux de message
 -----------------------
 
-Le module défini plusieurs niveau d'importance dans les messages, qui sont dans
-l'ordre croissant :
+Le module définit plusieurs niveaux d'importance dans les messages, qui sont dans l'ordre croissant :
 
 - Debug
 - Info
@@ -30,7 +29,7 @@ l'ordre croissant :
 
 .. note::
     
-    Dans cet exemple, je me suis servis de Python3, je n'ai pas vérifié la
+    Dans cet exemple, je me suis servi de Python3, je n'ai pas vérifié la
     compatibilité avec Python2, mais son usage doit être très similaire.
 
 Premier essai
@@ -46,7 +45,7 @@ ce qu'il s'y passe.
     logging.warning('coin')
     logging.debug('pan!')
 
-On execute le programme, et on obtient la sortie suivante::
+On exécute le programme, et on obtient la sortie suivante::
 
     $ ./logger.py  
     WARNING:root:coin
@@ -54,7 +53,7 @@ On execute le programme, et on obtient la sortie suivante::
 Plusieurs remarques:
 
 - Seul le warning s'est affiché, s'expliquant par la configuration de défaut
-  n'affichant uniquement les messages à partir du seuil warning. On verra
+  n'affichant qu'uniquement les messages à partir du seuil warning. On verra
   comment le modifier par la suite.
 - La sortie contient le niveau (WARNING), un 'root' un peu obscure, et le
   message, la sortie n'est pas très jolie ni très verbeuse, mais fait ce qu'on
@@ -75,9 +74,7 @@ ligne suivante::
 
     logging.basicConfig(filename="prog.log",level=logging.DEBUG)
 
-On exécute et regarde le fichier *prog.log*, on obtient exactement à quoi l'on
-s'attendait, les deux messages. Par simplicité, le fichier est renseigner par
-un chemin relatif, et se retrouve donc à l'endroit de l'execution du programme.
+On exécute et regarde le fichier *prog.log*, on obtient exactement ce à quoi l'on s'attendait : les deux messages. Par simplicité, le fichier est renseigné par un chemin relatif, et se retrouve donc à l'endroit de l'exécution du programme.
 On pourrait mettre un chemin absolu, en concaténant des variables
 d'environnement.
 
@@ -134,12 +131,12 @@ Fichier de configuration
 
 Pour avoir la possibilité de séparer la configuration du logger et le code en
 général, il est possible de tenir un fichier spécifique à la configuration, il
-supporte deux syntaxes différentes, basé sur ConfigParser ou YAML.
+supporte deux syntaxes différentes, basées sur ConfigParser ou YAML.
 
 Comme ce module permet un niveau de personnalisation assez avancé, il est normal
 que cela se ressente sur la verbosité du fichier de configuration. Pour ma
-part, je ne pense pas en avoir besoin dans l'immédiat, donc je vous renvoi sur
-la documentation officiel, et notamment ce `how-to`_ [2]_ qui est un bon endroit
+part, je ne pense pas en avoir besoin dans l'immédiat, donc je vous renvoie sur
+la documentation officielle, et notamment ce `how-to`_ [2]_ qui est un bon endroit
 pour commencer, et dont ce billet s'en inspire fortement.
 
 
