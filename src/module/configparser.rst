@@ -14,28 +14,22 @@ Pourquoi un fichier de configuration ?
 --------------------------------------
 
 Utiliser un fichier de configuration permet d'obtenir une application plus
-souple, si vous faites un choix arbitraire dans votre programme, demandez vous
+souple, si vous faites un choix arbitraire dans votre programme, demandez-vous
 s'il ne serait pas plus efficace de l'extraire, et de le mettre en tant que
 paramètre, modifiable par l'utilisateur. D'une part il est plus agréable de les
-manipuler de façon séparé et regrouper, et surtout cela évite qu'un utilisateur
-voulant changer une variable le fasse en fouillant dans le code, au risque de
-changer un mauvais paramètre par mégarde dans votre code source. 
+manipuler de façon séparée et regroupée, et surtout cela évite qu'un utilisateur voulant changer une variable le fasse en fouillant dans le code, au risque de modifier un mauvais paramètre par mégarde dans votre code source. 
 
 Présentation du module ConfigParser
 -----------------------------------
 
 Puisqu'un module existe pour Python, autant l'utiliser. Un des avantages est
-d'avoir la possibilité de commenter vos configuration en commencent par `# (dièse)` ou
-`; (point-virgule)` une ligne, celle-ci sera ignoré.  Le fichier suit une structure assez
-simple, qu'on retrouve régulièrement, basé sur un système de section, et
-d'argument/valeurs. Pour résumer dans un schéma::
+d'avoir la possibilité de commenter vos configurations en commençant par `# (dièse)` ou `; (point-virgule)` une ligne, celle-ci sera ignorée.  Le fichier suit une structure assez simple, qu'on retrouve régulièrement, basé sur un système de section, et d'arguments/valeurs. Pour résumer en un schéma::
 
     [my_section]
     coin = pan
     answer = 42
 
-On peut de la sorte avoir plusieurs noms de section et ce n'est là que pour donner
-une idée basique du module.
+On peut de la sorte avoir plusieurs noms de section et ce n'est là que pour donner une idée basique du module.
 
 Lire dans un fichier de configuration
 -------------------------------------
@@ -43,7 +37,7 @@ Lire dans un fichier de configuration
 Premier exemple tout simple, nous allons lire dans un fichier quelques
 arguments, pour les afficher en retour dans la console. Par commodité, on va
 placer le fichier de configuration à l'endroit où sera exécuté le programme. Le
-nom du fichier serra ici *conf.rc* mais aucune importance, du moment qu'on s'y
+nom du fichier sera ici *conf.rc* mais aucune importance, du moment qu'on s'y
 retrouve.
 
 `conf.rc`::
@@ -52,7 +46,7 @@ retrouve.
     nom = Dupond
     age = 42
 
-Il nous reste plus qu'à écrire le bout de code en python pour interpréter ça.
+Il ne nous reste plus qu'à écrire le bout de code en python pour interpréter ça.
 
 `config.py`::
 
@@ -80,7 +74,7 @@ Puis on le lance::
     $ ./config.py  
     Bonjour M. Dupond, vous avez 42 ans
 
-Ça fait ce qu'on voulais, mais voici quelques explications::
+Ça fait ce qu'on voulait, mais voici quelques explications::
 
     import ConfigParser
 
@@ -108,16 +102,11 @@ comment le faire de vous même.
 
     nom = config.get('user', 'nom')
 
-C'est là qu'on lit vraiment les variables, un détail à noté, tout comme on peut
-le deviner par la suite, la variable ``age`` est considéré comme une chaine de
-caractère, et non comme un nombre à part entière, dans l'état il ne serait pas
-possible d'effectuer des calcules dessus, mais pouvant être convertie facilement
-de la sorte::
+C'est là qu'on lit vraiment les variables, un détail à noter, tout comme on peut le deviner par la suite, la variable ``age`` est considérée comme une chaine de caractère, et non comme un nombre à part entière, dans l'état il ne serait pas possible d'effectuer des calculs dessus, mais pouvant être convertie facilement de la sorte::
 
     age = int(config.get('user', 'age'))
 
-De la sorte, ``age`` est maintenant effectivement un entier, et nous pourrions en
-faire toute sorte de calculs afin de trouver l'âge du capitaine.
+De la sorte, ``age`` est maintenant effectivement un entier, et nous pourrions faire toute sorte de calculs afin de trouver l'âge du capitaine.
 
 Je ne pense pas que le reste ait besoin de plus d'explication, plusieurs
 remarques cependant.
@@ -172,8 +161,8 @@ Oops, une erreur dans votre fichier de conf (No option 'age' in section:
 has_section, has_option
 '''''''''''''''''''''''
 
-Le module viens avec deux méthodes permettant de vérifier la présence de
-section ou d'option, on peut donc s'en servir, avec quelques choses ressemblant
+Le module vient avec deux méthodes permettant de vérifier la présence de
+section ou d'option, on peut donc s'en servir, avec quelque chose ressemblant
 à ça par::
 
     if config.has_option('user', 'nom'):
@@ -185,8 +174,8 @@ section ou d'option, on peut donc s'en servir, avec quelques choses ressemblant
     else:
         age = '42'
 
-On affecte également des valeurs par défaut si une option n'est pas trouvé, on
-peut noté également, que la gestion d'erreur sur la section n'est pas faite
+On affecte également des valeurs par défaut si une option n'est pas trouvée, on
+peut noter également, que la gestion d'erreur sur la section n'est pas faite
 ici, uniquement les options.
 
 Écrire dans un fichier de configuration
@@ -194,7 +183,7 @@ ici, uniquement les options.
 
 Jusqu'ici, nous avons vu comment lire les données d'un fichier de
 configuration. Pendant qu'on y est, autant jeter un œil sur la façon d'écrire,
-et donc sauvegarder, une configuration. Dans la lignée de ce qui à déjà était
+et donc sauvegarder, une configuration. Dans la lignée de ce qui a déjà été
 fait, même nom de fichier, même section et options.
 
 Dans un premier temps, on supprime le fichier de configuration `conf.rc` si
@@ -221,15 +210,14 @@ On rend exécutable avec `chmod +x config.py`, puis on exécute le script, et on
 observe le résultat en ouvrant le fichier conf.rc, il contient exactement ce
 qu'on attendait.
 
-Pour les explications, plus courte cette fois ci. On vois qu'on rajoute la
-section avec la méthode `add_section`, pour lequel on affecte les options avec
-la méthode `set` qui prends trois arguments::
+Pour les explications, plus courte cette fois-ci. On voit qu'on rajoute la
+section avec la méthode `add_section`, pour laquelle on affecte les options avec la méthode `set` qui prend trois arguments::
 
     config.set(section, options, valeur)
 
-L'utilisation de `with open` pour la lecture ou l'écriture de fichier à
-l'avantage de ne pas avoir besoin de le refermer, et celà quoi qu'il arrive,
-même si l'écriture est defectueuse. Cette façon de procédé est privilégié.
+L'utilisation de `with open` pour la lecture ou l'écriture de fichier a
+l'avantage de ne pas avoir besoin de le refermer, et cela quoi qu'il arrive,
+même si l'écriture est défectueuse. Cette façon de procéder est privilégiée.
 
 Sauvegarder un dictionnaire comme configuration
 -----------------------------------------------
@@ -257,14 +245,12 @@ configuration dans un fichier, on peut donc effectuer de la sorte::
     if __name__ == '__main__':
         main()
 
-On exécute, et regarde le résultat obtenu, et c'est ce que nous voulions, un
+On exécute et regarde le résultat obtenu, et c'est ce que nous voulions, un
 fichier contenant ce dictionnaire et sous forme `option = valeur`.
 
 Voilà, cette introduction au module ConfigParser [1]_ touche à sa fin, C'est un
 module qui n'est pas compliqué à prendre en main, il est conseillé de lire la
-documentation fournis pour plus amples détails. En espérant motiver certain à
-utiliser un fichier de configuration plutôt que d'écrire « en dur » les
-variables directement dans le fichier source.
+documentation fournie pour de plus amples détails. En espérant motiver certains à utiliser un fichier de configuration plutôt que d'écrire « en dur » les variables directement dans le fichier source.
 
 .. _`ConfigParser`: http://docs.python.org/library/configparser.html
 .. [1] http://docs.python.org/library/configparser.html
