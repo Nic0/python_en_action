@@ -87,3 +87,5 @@ Les Tests Unitaires
     src/tests/lettuce
     src/tests/coverage
     src/tests/watchr
+
+test
