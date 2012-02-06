@@ -19,7 +19,7 @@ s'il ne serait pas plus efficace de l'extraire, et de le mettre en tant que
 paramètre, modifiable par l'utilisateur. D'une part il est plus agréable de les
 manipuler de façon séparée et regroupée, et surtout cela évite qu'un
 utilisateur voulant changer une variable le fasse en fouillant dans le code, au
-risque de modifier un mauvais paramètre par mégarde dans votre code source. 
+risque de modifier un mauvais paramètre par mégarde dans votre code source.
 
 Présentation du module ConfigParser
 -----------------------------------
@@ -77,7 +77,7 @@ On le rend exécutable::
 
 Puis on le lance::
 
-    $ ./config.py  
+    $ ./config.py
     Bonjour M. Dupond, vous avez 42 ans
 
 Ça fait ce qu'on voulait, mais voici quelques explications::
@@ -119,7 +119,7 @@ facilement de la sorte::
 De la sorte, ``age`` est maintenant effectivement un entier, et nous pourrions
 faire toute sorte de calculs afin de trouver l'âge du capitaine.
 
-Je ne pense pas que le reste ait besoin de plus d'explication, plusieurs
+Je ne pense pas que le reste ait besoin de plus d'explications, plusieurs
 remarques cependant.
 
 - Le plus important, on remarque qu'il est simple d'interpréter de la sorte un
@@ -157,17 +157,17 @@ try/except block
     if __name__ == '__main__':
         main()
 
-Et on essaye avec un fichier de config erroné suivant::
+Et on essaie avec le fichier de config erroné suivant::
 
     [user]
     nom = Dupond
 
 On exécute, et regarde la sortie::
 
-    $ ./config.py  
+    $ ./config.py
 
-Oops, une erreur dans votre fichier de conf (No option 'age' in section:
-'user')
+Oops, une erreur dans votre fichier de conf
+*No option 'age' in section: 'user'*.
 
 has_section, has_option
 '''''''''''''''''''''''
@@ -221,7 +221,7 @@ On rend exécutable avec `chmod +x config.py`, puis on exécute le script, et on
 observe le résultat en ouvrant le fichier conf.rc, il contient exactement ce
 qu'on attendait.
 
-Pour les explications, plus courte cette fois-ci. On voit qu'on rajoute la
+Pour les explications, plus courtes cette fois-ci. On voit qu'on rajoute la
 section avec la méthode `add_section`, pour laquelle on affecte les options
 avec la méthode `set` qui prend trois arguments::
 

@@ -9,9 +9,9 @@ Certains détails peuvent surprendre aux premières utilisations. Ce qu'on aime
 avec Python, c'est avant tout de pouvoir penser à l'application, plutôt qu'au
 code lui même.
 
-`Requests`_ [2]_ se veux être un petit module répondant à cette problématique,
+`Requests`_ [2]_ se veut être un petit module répondant à cette problématique,
 « HTTP for humains » comme titre le site. On va voir quelques exemples, qui
-seront certainement plus marquant lorsque les besoins se complexifie.
+seront certainement plus marquant lorsque les besoins se complexifient.
 
 .. warning::
 
@@ -46,7 +46,7 @@ Il pourrait être écrit avec Requests comme suit::
 Remplir un formulaire
 ----------------------
 
-Un autre exemple tiré du site officiel, dont le but ici est de remplir un
+Un autre exemple tiré du site officiel, dont l'objet ici est de remplir un
 formulaire.
 
 ::
@@ -138,11 +138,11 @@ Conclusion
 Voilà un petit survole de Requests, et bien que je n'ai pas encore eu tellement
 l'occasion de l'utiliser, c'est très certainement un module que je vais garder
 sous le coude. Pour des scripts jetables, ou des petites applications
-personnel, il me semble évident que ça peut être un gain de temps et de
-confort. Pour ce qui est de son utilisation pour une application redistribué,
+personnelles, il me semble évident que ça peut être un gain de temps et de
+confort. Pour ce qui est de son utilisation pour une application redistribuée,
 je comprends qu'on puisse préférer l'utilisation d'un module *core* tel que
 urllib, cependant, avec un usage de setup.py pour redistribuer, les dépendances
-sont installé très facilement sans actions supplémentaires de l'utilisateur,
+sont installées très facilement sans actions supplémentaires de l'utilisateur,
 pourquoi pas utiliser Requests donc.
 
 .. _`Le cookbook`: http://docs.python.org/howto/urllib2.html

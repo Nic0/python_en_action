@@ -8,13 +8,13 @@ Introduction
 
 `Watchr`_ [1]_est un petit utilitaire pouvant être très pratique, il permet
 d'automatiser des tests à la sauvegarde de fichier. Bien qu'il soit écrit en
-Ruby, il peut être utilisé avec n'importe quel langage, je m'en suis servis par
+Ruby, il peut être utilisé avec n'importe quel langage, je m'en suis servi par
 exemple pour Symfony2 (avec PHPUnit), mais plus récemment avec Python. Voici
 une liste d'avantage qu'on peut trouver à ce genre d'outil :
 
 * Entièrement scriptable
 * Fonctionne avec des regex
-* Indépendant de tout langages ou frameworks (PHPunit, unittest, nosetests...)
+* Indépendant de tout langage ou framework (PHPunit, unittest, nosetests...)
 * Possibilité d'utiliser la notification du système d'exploitation
 * Réutilisable d'un projet à l'autre
 * Met à disposition toutes les richesses de Ruby
@@ -42,8 +42,8 @@ Python et la syntaxe
 --------------------
 
 Un premier exemple permet de vérifier la syntaxe du fichier à chaque sauvegarde
-dans une console séparé. Certes des plugins de Vim on une approche similaire
-pour la syntaxe de Python, mais comme on le vera, watchr offre d'autres
+dans une console séparée. Certes, des plugins de Vim ont une approche similaire
+pour la syntaxe de Python, mais comme on le verra, watchr offre d'autres
 possibilités.
 
 `watchrc.rb`::
@@ -91,7 +91,7 @@ chaque exemple en son temps.
     end
 
 Pour s'assurer que ça fonctionne, on démarre watchr comme vu précédemment, et
-on édite un des fichiers surveillé, si tout ce passe bien, le tests devrait
+on édite un des fichiers surveillé, si tout ce passe bien, le tests devraient
 s’enclencher automatiquement après la sauvegarde.
 
 ::
@@ -135,10 +135,10 @@ Notification système
 --------------------
 
 Maintenant que le script fonctionne, rajoutons une notification, afin de ne pas
-avoir besoin de garder la console sur le bureau courent, tout en aillant une
+avoir besoin de garder la console sur le bureau courent, tout en ayant une
 indication. La notification est simple, indiquant si le test passe ou non, en
-rajoutant une petite icon ('ok vert', 'pas bon rouge') afin de garder un
-reperd visuel, pour un gain de confort et de temps.
+rajoutant une petite icône ('ok vert', 'pas bon rouge') afin de garder un
+repère visuel, pour un gain de confort et de temps.
 
 `watchrc.rb`::
 
@@ -194,7 +194,7 @@ connaître.
 
 .. _`Watchr`: https://github.com/mynyml/watchr
 .. _`un billet`: http://criticallog.thornet.net/2011/03/08/autotesting-with-watchr-growl-and-phpunit/
-.. _`une configuration`: https://raw.github.com/gist/276317/45b7ca8a20f0585acc46bc75fade09a260155a61/tests.watchr 
+.. _`une configuration`: https://raw.github.com/gist/276317/45b7ca8a20f0585acc46bc75fade09a260155a61/tests.watchr
 
 .. [1] https://github.com/mynyml/watchr
 .. [2] http://criticallog.thornet.net/2011/03/08/autotesting-with-watchr-growl-and-phpunit/

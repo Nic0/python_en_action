@@ -3,8 +3,8 @@
 Déplacement de fenêtre
 ======================
 
-Petit exercice, pour une approche de la bibliothèque curses en douceur.  Le
-but, tout simple, est de créer une petite fenêtre à l'intérieur de la console,
+Petit exercice, pour une approche de la bibliothèque curses en douceur. Son
+objet, tout simple, est de créer une petite fenêtre à l'intérieur de la console,
 cette fenêtre est visualisable par un carré (4x6), et de la déplacer dans sa
 console à l'aide des flèches directionnel. Même si l'émerveillement de voir
 apparaître une fenêtre reste limité, ce n'est pas moins un bon exercice afin de
@@ -34,9 +34,9 @@ Dans un premier temps, on va afficher une petite fenêtre et... c'est tout.
     if __name__ == '__main__':
         curses.wrapper(main)
 
-On rend le tout exécutable avec un chmod +x, puis on regarde le résultat. Une
-fenêtre s'affiche, nous sommes émerveillé, on appuis sur une touche, le
-programme quitte. Mais déjà quelques explications s'impose, en commençant par
+On rend le tout exécutable avec un ``chmod +x``, puis on regarde le résultat. Une
+fenêtre s'affiche, nous sommes émerveillé, on appuit sur une touche, le
+programme quitte. Mais déjà quelques explications s'imposent, en commençant par
 l'appel du ``main()`` qui ne se fait pas comme on a l'habitude de voir.
 
 ::
@@ -51,7 +51,7 @@ on met la fonction ``main`` en argument, il faut noter qu'il n'y a pas besoin de
 parenthèses dans ce cas, puisqu'on passe la référence de cette fonction, et non
 un message d'exécution de celle ci.
 
-L'autre important avantage d'utiliser le wrapper, c'est de vous laisser la
+L'autre avantage important d'utiliser le wrapper, c'est de vous laisser la
 console dans un état *normal* lorsque vous quittez ou que le programme plante,
 sinon, il vous le laisse dans un état qui vous obligerez quasiment à fermer
 votre console, car l'affichage y serait très pénible.
@@ -88,7 +88,7 @@ l'écran ``scr``::
 Faire bouger la fenêtre
 -----------------------
 
-Comme le but étant de faire bouger un peu la fenêtre, voyons comment faire
+Comme l'objet est de faire bouger un peu la fenêtre, voyons comment faire
 évoluer le code pour cela. Par commodité, je vais bouger le ``main`` dans
 sa propre classe. Jetons directement un œil au code.
 
@@ -154,7 +154,7 @@ aux lignes suivantes::
     self.pos = [3, 3]
     self.size = [4, 6]
 
-Les trois lignes suivantes ne sont que des appels à d'autre méthode de la
+Les trois lignes suivantes ne sont que des appels à d'autres méthodes de la
 classe.
 
 On initialise quelques éléments de ncurses::
@@ -196,7 +196,7 @@ utile pour convertir la lettre en son équivalant numérique, car les touches
 saisis sont des chars.
 
 On lance le programme, on joue un peu avec, la fenêtre ce déplace, on est
-content... jusqu'à ce que... la fenêtre sort de la console, en faisant planter
+content... jusqu'à ce que... la fenêtre sorte de la console, en faisant planter
 le programme. Nous savons ce qu'il nous reste à faire alors, nous assuré que
 cette fenêtre ne sorte pas de la console.
 
@@ -266,16 +266,16 @@ Script au complet
     if __name__ == '__main__':
         curses.wrapper(MovingWindow)
 
-Il n'y a pas énormément de changement, et corresponde à la gestion de la taille
-maximal de l'écran. On remarque dans un premier temps, que j'en ai profiter
-pour créer autant de méthodes que de mouvement, permettant de gagner en
-lisibilité un peu.
+Il n'y a pas énormément de changements, ils correspondent à la gestion de la taille
+maximale de l'écran. On remarque dans un premier temps, que j'en ai profité
+pour créer autant de méthodes que de mouvements, permettant de gagner un peu en
+lisibilité.
 
-La ligne suivante, va retourner la taille de la console dans une turple::
+La ligne suivante, va retourner la taille de la console dans un tuple::
 
     self.maxyx = self.scr.getmaxyx()
 
 Tout le reste n'est qu'un petit peu de calcul et de logique pour s'assurer que
 la fenêtre ne sorte pas.
 
-On pourrait très bien essayer quatre touches qui aurait pour effet d'agrandir la fenêtre par l'un des côtés, toujours en s'assurant de l'espace disponible.
+On pourrait très bien essayer quatre touches qui auraient pour effet d'agrandir la fenêtre par l'un des côtés, toujours en s'assurant de l'espace disponible.

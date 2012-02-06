@@ -29,7 +29,7 @@ dans l'ordre croissant :
 - Critical
 
 .. note::
-    
+
     Dans cet exemple, je me suis servi de Python3, je n'ai pas vérifié la
     compatibilité avec Python2, mais son usage doit être très similaire.
 
@@ -48,7 +48,7 @@ ce qu'il s'y passe.
 
 On exécute le programme, et on obtient la sortie suivante::
 
-    $ ./logger.py  
+    $ ./logger.py
     WARNING:root:coin
 
 Plusieurs remarques:
@@ -56,7 +56,7 @@ Plusieurs remarques:
 - Seul le warning s'est affiché, s'expliquant par la configuration de défaut
   n'affichant qu'uniquement les messages à partir du seuil warning. On verra
   comment le modifier par la suite.
-- La sortie contient le niveau (WARNING), un 'root' un peu obscure, et le
+- La sortie contient le niveau (WARNING), un 'root' un peu obscur, et le
   message, la sortie n'est pas très jolie ni très verbeuse, mais fait ce qu'on
   lui demande.
 - Le message est envoyé en console et non pas dans un fichier comme
@@ -96,7 +96,7 @@ ferait pour une *string*, comme dans l'exemple suivant::
 
 La sortie sera la suivante::
 
-    $ ./logger.py 
+    $ ./logger.py
     WARNING:root:a:coin b:pan!
 
 Ajouter l'heure aux messages
@@ -143,9 +143,9 @@ la documentation officielle, et notamment ce `how-to`_ [2]_ qui est un bon endro
 pour commencer, et dont ce billet s'en inspire fortement.
 
 
-.. _`un module`: http://docs.python.org/library/logging.html 
+.. _`un module`: http://docs.python.org/library/logging.html
 .. _`how-to`: http://docs.python.org/py3k/howto/logging.html
 
 
-.. [1] http://docs.python.org/library/logging.html 
+.. [1] http://docs.python.org/library/logging.html
 .. [2] http://docs.python.org/py3k/howto/logging.html

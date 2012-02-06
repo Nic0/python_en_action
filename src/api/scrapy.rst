@@ -19,14 +19,14 @@ d'inscription, le plus souvent accessible uniquement aux membres déjà inscrit
 récupérer toutes les dates d'inscriptions, d'en faire un cumule pour chaque
 mois, et de faire un petit graphique pour présenter et visualiser le résultat.
 Évidemment, comme c'est un blog aussi sur la programmation, on va voir comment
-obtenir se graphique ici.
+obtenir ce graphique ici.
 
 J'avoue, le but était bien plus d'essayer de nouveaux jouets, et de programmer
 un peu, que de vraiment connaître le résultat qui ne sont pas à prendre au pied
 de la lettre, d'autres solutions certainement plus simple existe, mais je
 voulais vraiment essayer `Scrapy`_ dans un exemple réel. Scrapy semble être un
-outil vraiment puissant et modulable, il est évidant que l'utiliser ici pour
-résoudre se problème si simple est utiliser une solution démesuré. Cependant,
+outil vraiment puissant et modulable, il est évident que l'utiliser ici pour
+résoudre ce problème si simple est une solution démesurée. Cependant,
 je pense que pour découvrir un outil, il est préférable de l'essayer avec un
 problème simple. C'est pourquoi je l'emploie ici.
 
@@ -34,12 +34,12 @@ Prérequis
 ---------
 
 Ce billet s’appuie sur `Scrapy`_ pour crawler le forum et `Pylab`_ pour
-obtenir le graphique, pylab est fournis par matplotlib. Il convient de
+obtenir le graphique, pylab est fourni par matplotlib. Il convient de
 l'installer avant avec ``pip``, ``easy_install`` ou des gestionnaires de paquets
 comme ``pacman`` et ``apt-get``. Dans le cas d'archlinux.org, il n'est accessible
 uniquement par du https, il convient d'installer pyopenssl
 
-Arch Linux et Yaourt 
+Arch Linux et Yaourt
 ''''''''''''''''''''
 
 ::
@@ -70,7 +70,7 @@ Génération du projet
 
 ::
 
-    $ tree archlinux 
+    $ tree archlinux
     archlinux
     |── archlinux
     │   |── __init__.py
@@ -86,7 +86,7 @@ Génération du projet
 La structure peut dérouter au début, mais elle est logique est sa prise
 en main rapide. En gros, on va créer un *spider* dans le répertoire, qui
 récupèrera les données, et suivra les urls qu'on lui indiquera, il se chargera
-de s'identifier au début sur le forum, chaque données, ou items seront défini
+de s'identifier au début sur le forum, chaque donnée, ou élément sera défini
 dans items.py, et traite dans pipelines, dans ce cas afin de les sauvegarder.
 
 Les items
@@ -102,14 +102,16 @@ dans ce cas, seul la date nous intéresse.
     class ArchlinuxItem(Item):
         date = Field()
 
-Comme le générateur de projet fournis un squelette bien avancé déjà, il nous
-est utiles que de rajouter la ligne `date = Field()` permettant de définir
+Comme le générateur de projet fournis un squelette bien avancé déjà, il n'est
+utile que de rajouter la ligne `date = Field()` permettant de définir
 l'item date.
 
 Le spider
 '''''''''
 
-Cette partie est la plus compliqué, je vais essayer de l'expliquer au mieux. Dans le fichier ``archlinux/spiders/archlinux_spider.py``. On commence par les imports.
+Cette partie est la plus compliquée, je vais essayer de l'expliquer au mieux.
+Dans le fichier ``archlinux/spiders/archlinux_spider.py``.
+On commence par les imports.
 
 ::
 
@@ -119,10 +121,11 @@ Cette partie est la plus compliqué, je vais essayer de l'expliquer au mieux. Da
     from scrapy.selector import HtmlXPathSelector
     from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 
-Puis on va créer une classe héritant d'un spider de base, dans l'exemple, on prends en compte le forum d'archlinux.fr.
+Puis on va créer une classe héritant d'un spider de base, dans l'exemple,
+on prends en compte le forum d'archlinux.fr.
 
 À propos de l'extracteur de lien ``extractor``, C'est l'initialisation de ce
-qui extrait les liens à suivre, d'une part on le restreint à memberlist, mais
+qui extrait les liens à suivre, d'une part on le restreint à ``memberlist``, mais
 l'idée est de toujours suivre le lien "suivant" un peu comme on cliquerai pour
 aller du début à la fin de la liste de membre, en appuyant frénétiquement sur
 Suivant.  Le suivant est trouvé en restreignant au bon lien avec Xpath.
@@ -133,15 +136,15 @@ Suivant.  Le suivant est trouvé en restreignant au bon lien avec Xpath.
 
         name = "archlinux"
         allowed_domains = ["forums.archlinux.fr"]
-        extractor = SgmlLinkExtractor(allow='memberlist', 
+        extractor = SgmlLinkExtractor(allow='memberlist',
                                   restrict_xpaths='//a[. = "Suivant"]')
 
 
 
-``start_requests`` est la première fonction appelé après l'initialisation
-du bot, je m'en sers ici pour demander une page de login, afin de la
+``start_requests`` est la première fonction appelée après l'initialisation
+du bot, je m'en sers ici pour demander une page d'identification, afin de la
 remplir avec mes identifiants, cette façon de procéder permet de
-m'assurer que les champs caché (token, csrf...) soit correctement
+m'assurer que les champs caché (token, csrf...) sont correctement
 remplis, ou encore de gérer les sessions, cookies...
 On retourne un Request, avec comme callback la fonction qui gèrera le
 login.
@@ -150,13 +153,13 @@ login.
 
     def start_requests(self):
         login_url ='http://forums.archlinux.fr/ucp.php?mode=login'
-        return [Request(login_url, callback=self.login)]                                   
+        return [Request(login_url, callback=self.login)]
 
 
-La page de login est reçu, on traite ici en utilisant une classe un peu
-spéciale FormRequest et surtout avec la méthode from_response. On
+La page de login est reçue, on traite ici en utilisant une classe un peu
+spéciale ``FormRequest`` et surtout avec la méthode ``from_response``. On
 renseigne les éléments, et la réponse de cette demande de login sera
-géré par la méthode after_login (callback).
+géré par la méthode ``after_login (callback)``.
 
 ::
 
@@ -167,14 +170,14 @@ géré par la méthode after_login (callback).
                         callback=self.after_login)]
 
 En dernier, on gère les pages normalement, avec `parse` qui est la fonction par
-défaut pour faire le traitement des pages.  On y gère la réponse, c'est a dire
-la page html downloadé, et on en extrait les liens a suivre, qui seront rajouté
-dans la queue avec yield Request, le callback se fera dans cette fonction.
+défaut pour faire le traitement des pages.  On y gère la réponse, c'est-à-dire
+la page html téléchargée, et on en extrait les liens à suivre, qui seront rajoutés
+dans la queue avec ``yield Request``, la fonction de rappel se fera dans cette fonction.
 
-À propos de ``HtmlXPathSelector``, on cherche a trouver tout les éléments
+À propos de ``HtmlXPathSelector``, on cherche à trouver tous les éléments
 contenant la date, ils sont extrait en regardant le code source d'une page html
 et en adaptent l'Xpath encore une fois. Chaque élément trouvé est rajouté avec
-yield item, qui est en relation avec l'item du fichier défini plus haut.
+``yield item``, qui est en relation avec l'élément du fichier défini plus haut.
 
 ::
 
@@ -192,7 +195,7 @@ yield item, qui est en relation avec l'item du fichier défini plus haut.
 Le Pipeline
 '''''''''''
 
-Dans cette exemple, on va simplement rajouter chaque élément dans un fichier,
+Dans cet exemple, on va simplement rajouter chaque élément dans un fichier,
 et le traîter par un petit script python plus tard, il serait faisable de le
 faire en même temps ici.
 
@@ -234,8 +237,8 @@ Mise en route
 
 La mise en fonctionnement du bot est très simple et se fait en ligne de
 commande. Une longue suite de ligne de débug apparaîtra en console, mais le
-plus import est de vérifier le résultat obtenu. Et après avoir parser une
-trentaine de pages, on obtient le fichier result.txt voulu.
+plus important est de vérifier le résultat obtenu. Et après avoir analysé une
+trentaine de pages, on obtient le fichier ``result.txt`` voulu.
 
 ::
 
@@ -246,7 +249,7 @@ Le résultat semble correct, et surtout::
     $ cat result.txt | wc -l
     3017
 
-Un rapide coup d'œil au forum, qui indique le nombre d'inscrit, je tombe
+Un rapide coup d'œil au forum, qui indique le nombre d'inscrits, je tombe
 exactement sur le même chiffre, ce qui est rassurant. Nous voilà avec un grand
 fichier, avec tout plein de dates. Il nous faut maintenant trouver le moyen de
 traiter ces informations.
@@ -309,15 +312,15 @@ Arch Linux Francophone
 Arch Linux Anglophone
 ---------------------
 
-Le principe est le même, il faut simplement adapter certain détail pour le
+Le principe est le même, il faut simplement adapter certains détails pour le
 forum anglophone, qui n'utilise plus phpbb mais fluxbb, je place les codes ici,
 sans plus d'explications.
 
-Il faut tout de même parser 760 pages pour obtenir les 34'000 membres. Bien
-sûr, on retrouve dans notre fichier le nombre exacte de membres.
+Il faut tout de même parser 760 pages pour obtenir les 34 000 membres. Bien
+sûr, on retrouve dans notre fichier le nombre exact de membres.
 
-Tout de fois, un petit traitement du fichier en ligne de commande à été utile,
-d'une part avec vim (ou sed) car les inscription du jour et d'hier sont noté
+Tout de fois, un petit traitement du fichier en ligne de commande a été utile,
+d'une part avec vim (ou sed) car les inscriptions du jour et d'hier sont notées
 Yesterday et Today, au lieu de la date, ça pourrait fausser le résultat.
 D'autre part, pour que les dates soient dans l'ordre, un ``sort`` est requis.
 Si vraiment on y tient, il aurait été facile de le placer directement dans le
@@ -335,7 +338,7 @@ script après.
 
         name = "archlinux"
         allowed_domains = ["bbs.archlinux.org"]
-        extractor = SgmlLinkExtractor(allow='userlist', 
+        extractor = SgmlLinkExtractor(allow='userlist',
                                       restrict_xpaths='//a[. = "Next"]')
 
         def parse(self, response):

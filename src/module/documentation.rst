@@ -3,8 +3,8 @@
 Consulter la documentation en local
 ===================================
 
-L'idée est de lire la documentation de tout les modules dans un navigateur,
-qu'ils soient natif à Python ou installée implicitement, le tout en local.
+L'idée est de lire la documentation de tous les modules dans un navigateur,
+qu'ils soient natifs à Python ou installés implicitement, le tout en local.
 Plusieurs avantages à ça :
 
 - Avoir toujours la documentation correspondante à la version installée
@@ -17,7 +17,7 @@ retrouve également pour Perl, `Perldoc-server`_ [2]_.
 Cependant, je le trouve vraiment moins bien fait que celui de Ruby, qui a pour
 avantage d'être bien plus facilement navigable, la possibilité d'afficher le
 code correspondant (vraiment utile). Sans parler de l'esthétisme global bien
-meilleur. Il est dommage qu'il ne soit pas un peu plus aboutis que ça.
+meilleur. Il est dommage qu'il ne soit pas un peu plus abouti que ça.
 
 Le fonctionnement est très simple, on lance le serveur comme suit::
 

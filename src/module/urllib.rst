@@ -8,7 +8,7 @@ et sur un coup de tête, le titre original était d'ailleurs *Le script idiot du
 dimanche*, titre honteusement repompé de PC INpact (les liens idiots du
 dimanche) mais qui était de circonstance. Je pense qu'il peut faire une petite
 introduction à Urllib, tout en restant amusant, chose importante lorsqu'on
-apprends, et surtout de façon auto-didacte.
+apprends, et surtout de façon autodidacte.
 
 Mais la question qu'on peut se poser est :
 
@@ -19,7 +19,7 @@ s'assurer que pour un site qui vous est inaccessible, qu'il ne s'agisse pas d'un
 problème venant de chez vous. L'intérêt est de passer par un autre site, afin
 de s'assurer que le problème rencontrer n'est pas entre le premier site et soi.
 Ce script est tout simplement un front-end de ce site, dont l'usage en console
-est on ne peu plus simple::
+est on ne peut plus simple::
 
     $ ./downforeveryoneorjustme http://www.nicosphere.net
     It's just you. http://www.nicosphere.net is up.
@@ -66,7 +66,7 @@ Mais jetons un œil au script tout de même.
                 self.usage()
 
         def is_url(self):
-            url_regex = 
+            url_regex =
             'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
             resp = re.findall(url_regex, self.url)
             if len(resp) != 1:
@@ -100,9 +100,9 @@ affiche le résultat avec de belles couleurs. Et c'est tout !
 
 Le script méritait donc bien le titre de ce billet.
 
-Il y aurait bien sûr beaucoup d'amélioration à effectuer ou même des
-simplification, mais je le laisse tel quel pour montrer qu'en vraiment peut de
-temps, et sans connaitre très bien Python, on peut arriver à un résultat
+Il y aurait bien sûr beaucoup d'améliorations à effectuer ou même des
+simplifications, mais je le laisse tel quel pour montrer qu'en vraiment peu de
+temps, et sans connaître très bien Python, on peut arriver à un résultat
 amusant et concret.
 
 .. _`La Rache`: http://www.nicosphere.net/utilisez-la-methode-la-rache-pour-vos-projets-1363/

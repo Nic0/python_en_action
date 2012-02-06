@@ -6,8 +6,8 @@ Piles et Files avec Deque
 Introduction
 ------------
 
-En programmation, les `piles`_ [1]_ et `files`_ [2]_, aka LIFO (last in, first
-out) et FIFO (first in, first out) sont des incontournables. Il s'agit de
+En programmation, les `piles`_ [1]_ et `files`_ [2]_, aka LIFO (*last in, first
+out*) et FIFO (*first in, first out*) sont des incontournables. Il s'agit de
 stocker des données, et surtout de l'ordre dans lequel on récupère celle-ci.
 Pour information, j'avais écrit `Exemple de file avec deux pointeurs en langage
 C`_ [3]_ qui est un exemple de liste chaînée utilisée comme une file en C.
@@ -29,7 +29,7 @@ Utilisation
 Rien de bien compliqué, regardons cette suite de commande effectuée directement
 avec l'interpréteur.
 
-- Fonctionnement comme pile (lifo)
+- Fonctionnement comme pile (LIFO)
 
 ::
 
@@ -45,7 +45,7 @@ avec l'interpréteur.
     >>> pile
     deque([1, 2, 3, 6])
 
-- Fonctionnement comme file (fifo)
+- Fonctionnement comme file (FIFO)
 
 ::
 
@@ -74,11 +74,11 @@ Pour plus de détails sur les possibilités, lisez `la documentation officiel su
 ce module`_ [4]_.
 
 Ce module est assez simple à prendre en main, mais toujours utile si on sait
-qu'on veut mettre en place rapidement une fifo ou lifo. Ce n'est qu'une méthode
-parmi d'autre pour obtenir ce que l'on souhaite, mai l'avantage de *deque* est
+qu'on veut mettre en place rapidement une *FIFO* ou *LIFO*. Ce n'est qu'une méthode
+parmi d'autres pour obtenir ce que l'on souhaite, mai l'avantage de *deque* est
 d'être très simple à l'emploi, tout en étant plus performant. Éventuellement,
 pour les plus curieux, l'utilisation de `queue.LifoQueue` pourrait intéresser,
-mais l'idée ici était de garder une utilisation simplifié au maximum.
+mais l'idée ici était de garder une utilisation simplifiée au maximum.
 
 .. _`piles`: http://fr.wikipedia.org/wiki/Pile_(informatique)
 .. _`files`: http://fr.wikipedia.org/wiki/File_(structure_de_données)

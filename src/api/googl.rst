@@ -1,9 +1,9 @@
 .. _googl:
 
-Api goo.gl et Oauth
+Api goo.gl et OAuth
 ===================
 
-Désirant essayer un peu le service de Google pour raccourcir les url goo.gl, j'ai
+Désirant essayer un peu le service de Google pour raccourcir les URL goo.gl, j'ai
 voulu l'intégrer à mon petit client Twitter `Tyrs`_ [1]_, et surtout intégrer
 l'identification Oauth. Nous allons voir ici comment utiliser l'API pour
 raccourcir un lien, et la documentation pour aller plus loin.
@@ -27,16 +27,16 @@ comme le montre l'image suivante, disponible toujours au même endroit :
 .. note::
 
     **Pour suivre ce tutoriel, vous n'êtes pas obligé d'enregistrer une
-    application.** Si vous le faite, vous avez obtenu un classique couple de clée
+    application.** Si vous le faite, vous avez obtenu un classique couple de clef
     client id / client secret. Un client secret, qui comme je l'expliquais dans le
-    chapitre précédant, n'a rien de secret du tout, et peut être partagé par
-    tous.  L'exemple serra pris avec les clés préparé et fonctionnant, vous
+    chapitre précédent, n'a rien de secret du tout, et peut être partagé par
+    tous.  L'exemple sera pris avec les clés préparées et fonctionnant, vous
     pouvez donc les utiliser.
 
 Les dépendances
 ---------------
 
-Une seule dépendance est requise, mais une autre est optionnel on verra par la
+Une seule dépendance est requise, mais une autre est optionnelle, on verra par la
 suite pourquoi.
 
 - **google-api-python-client**
@@ -62,17 +62,17 @@ Pour Arch Linux::
 Le code
 -------
 
-Le code suivant, est une version simplifié du code exemple pouvant être trouvé
-sur `le lien suivant`_ [8]_, on peut noté qu'on trouve également des exemples pour
+Le code suivant, est une version simplifiée du code exemple pouvant être trouvé
+sur `le lien suivant`_ [8]_, on peut noter qu'on trouve également des exemples pour
 d'autres langages tel que Ruby, Java, PHP, .NET…
 
-La version que je fournis plus bas, basé sur leur exemple  est allégé du
+La version que je fournis plus bas, reposant sur leur exemple  est allégée du
 système de logging et de leur système de commande, qui nécessite également la
 dépendance *python-gflags* qui n'apporte pas un plus ici (surtout que leur lien
 à raccourcir est écrit en dure dans le code)
 
 L'usage voulu ici est par exemple ``./googl.py http://www.nicosphere.net``, et
-ainsi obtenir en retour le lien raccourcis.
+ainsi obtenir en retour le lien raccourci.
 
 ::
 
@@ -93,22 +93,22 @@ ainsi obtenir en retour le lien raccourcis.
 
     def main(argv):
 
-      # On essaye d'obtenir le lien fournis en ligne de commande
+      # On essaie d'obtenir le lien fourni en ligne de commande
       try:
         long_url = argv[1]
       except IndexError:
         print 'Il faut fournir une URL'
         return
 
-      # Une fonctionnalité de l'API est associé au fichier googl.tok
+      # Une fonctionnalité de l'API est associée au fichier googl.tok
       storage = Storage('googl.tok')
       credentials = storage.get()
       # Si le fichier n'existe pas, ou n'est pas valide, on demande une
-      # authorisation, le fonctionnement est directement dans l'API de google.
+      # autorisation, le fonctionnement est directement dans l'API de Google.
       if credentials is None or credentials.invalid:
         credentials = run(FLOW, storage)
 
-      # La requete http est préparé.
+      # La requête http est préparée.
       http = httplib2.Http()
       http = credentials.authorize(http)
       service = build("urlshortener", "v1", http=http)
@@ -139,17 +139,17 @@ ainsi obtenir en retour le lien raccourcis.
 Authentification à votre compte
 -------------------------------
 
-À la première utilisation, Il vous serra demandé de suivre un lien, afin
+À la première utilisation, Il vous sera demandé de suivre un lien, afin
 d'autoriser l'application à s'associer avec votre compte, vous devez être
 identifié à votre compte Google. Exactement comme lorsque vous utilisez un
 nouveau client Twitter avec un compte, sauf que ici, pas besoin de PIN code de
 validation.
 
 Pour que l'application soit utilisable une fois sur l'autre sans avoir à
-valider, les accès sont enregistré dans un fichier, à côté de votre executable,
+valider, les accès sont enregistré dans un fichier, à côté de votre exécutable,
 dans cet exemple : `googl.tok`
 
-La sortie console ressemble à celà::
+La sortie console ressemble à cela ::
 
     $ python2.7 googl.py http://www.nicosphere.net
     Go to the following link in your browser:
@@ -164,22 +164,22 @@ Du côté validation dans le navigateur web, cela ressemble à ça :
 
 .. note::
 
-    Les clées sont celles générées pour `Tyrs`_ [1]_, c'est pourquoi il apparaît
-    dans le screenshot, si vous avez suivis la première étape, vous devez avoir
+    Les clefs sont celles générées pour `Tyrs`_ [1]_, c'est pourquoi il apparaît
+    dans le capture d'écran, si vous avez suivis la première étape, vous devez avoir
     le nom de votre application apparaître.
 
-Finallement, vous devez voir dans la console le lien raccourcis correspondant,
-si l'opération est renouvelé il n'y a pas besoin de s'authentifier comme la
+Finalement, vous devez voir dans la console le lien raccourcis correspondant,
+si l'opération est renouvelée il n'y a pas besoin de s'authentifier comme la
 première fois.
 
 Conclusion
 ----------
 
-Ici on ne fait que retourner le lien racourcis de Google, l'API permet d'en
+Ici on ne fait que retourner le lien raccourci de Google, l'API permet d'en
 faire bien plus encore, pour cela, il faut consulter `le guide de
 démarrage`_ [10]_ ou `la référence de l'API`_ [9]_. Mais ce petit morceau de code
 permet d'avoir une idée, et montre que l'utilisation Oauth / API Google est
-plus accessible qu'on pourrait le croire au première abord.
+plus accessible qu'on pourrait le croire au premier abord.
 
 .. _`Tyrs`: http://tyrs.nicosphere.net
 .. _`en allant sur le lien suivant`: https://code.google.com/apis/console/
@@ -191,8 +191,8 @@ plus accessible qu'on pourrait le croire au première abord.
 .. _`la référence de l'API`: http://code.google.com/apis/urlshortener/v1/reference.html
 .. _`le guide de démarrage`: http://code.google.com/apis/urlshortener/v1/getting_started.html
 
-.. [1] http://tyrs.nicosphere.net Tyrs est un client twitter en console se
-    basant sur ncurses et sous licence GPL. J'en ai commencer l'écriture début mai
+.. [1] http://tyrs.nicosphere.net Tyrs est un client Twitter en console utilisant
+    ncurses et sous licence GPL. J'en ai commencé l'écriture début mai
     (2011), il est fonctionnel et je m'en sers encore au quotidien.
 .. [2] https://code.google.com/apis/console/
 .. [3] http://code.google.com/apis/accounts/docs/OAuth2.html#Registering

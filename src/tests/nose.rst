@@ -8,7 +8,7 @@ billet, on va voir comment faciliter l’exécution d'une suite de tests, même
 hétérogène, et plus encore.
 
 Nose, s'intègre avec unittest et doctest, mais propose également
-sa propre syntaxe simplifié pour écrire des tests. Dans ce billet, on prendra
+sa propre syntaxe simplifiée pour écrire des tests. Dans ce billet, on prendra
 la même fonction aillant servis au dernier billet, c'est à dire une fonction
 ``add()``, additionnant simplement deux nombres entre eux.
 
@@ -115,7 +115,7 @@ test tout simple en doctest, pour voir qu'il est bien inclue directement.
 
 Puis, on exécute la suite de test avec la commande ``nosetests``::
 
-    $ nosetests                           
+    $ nosetests
     test_add_string (test_chiffres.TestChiffres) ... ok
     test_add_with_float (test_chiffres.TestChiffres) ... ok
     test_addition (test_chiffres.TestChiffres) ... ok
@@ -126,7 +126,7 @@ Puis, on exécute la suite de test avec la commande ``nosetests``::
 
     OK
 
-Les trois tests venant de unitest, auquel on rajoute doctest, le compte y est.
+Les trois tests venant de unitest, auxquels on rajoute doctest, le compte y est.
 
 Framework de test spécifique à Nose
 -----------------------------------
@@ -185,11 +185,11 @@ On relance nosetests comme suit::
 
     OK
 
-Comme prévu, nosetests à parcourus l'arborescence pour trouver les trois
+Comme prévu, nosetests a parcouru l'arborescence pour trouver les trois
 fichiers de tests (test_chiffres.py, test_doctest_chiffres.txt et
 test_nose_chiffres.py), dans ce cas les tests passent tous, mais on peut aisément
 à partir de là jouer un peu avec, pour voir son comportement. On note
-aussi que nosetests ne se soucis pas de passer d'un format (unittest, doctest)
+aussi que nosetests ne se soucit pas de passer d'un format (unittest, doctest)
 à son propre format de tests, le tout à la volée.
 
 Comme indiqué plus haut, il est possible d'utiliser un setUp() et tearDown(),
@@ -211,7 +211,7 @@ Pinocchio, plugin pour Nose
 
 `Pinocchio`_ [3]_ est un plugin pour utiliser nose d'une façon plus proche de
 `RSpec`_ [5]_.  L'idée est de rendre les tests un peu plus parlant, un peu de la façon
-dont on procède pour le BDD (Behavior Driven Development), il est préférable ed se
+dont on procède pour le BDD (Behavior Driven Development), il est préférable de se
 reporter à quelques documentations à ce sujet si vous n'êtes pas familier avec
 ce terme. Pinocchio ne semble pas fonctionner avec Python3, ou du moins, je
 n'ai pas réussi.
@@ -255,7 +255,7 @@ défaut)
 
 ::
 
-    $ nosetests-2.7                  
+    $ nosetests-2.7
 
     Chiffres
     - add string
@@ -331,7 +331,7 @@ Pour donner un exemple de sortie comportant une erreur::
 
     FAILED (errors=1)
 
-Pinocchio peut répondre à un besoin de faire des tests un peu différent, si le
+Pinocchio peut répondre à un besoin de faire des tests un peu différents, si le
 plugin fait ce qu'on lui demande, il ne semble pas être très activement
 maintenu. La raison est certainement que ce plugin ne correspond plus vraiment
 à un besoin, et que l'approche vu dans le prochain chapitre est plus pertinante

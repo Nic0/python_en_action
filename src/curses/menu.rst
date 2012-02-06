@@ -6,16 +6,16 @@ Menu navigable
 Ce que l'on veut
 ----------------
 
-Deux scripts sont proposé dans ce chapitre, le second en est une extention.
+Deux scripts sont proposés dans ce chapitre, le second en est une extension.
 
 - Un menu complet, dans lequel nous pouvons nous déplacer à l'aide de flèche,
   et sélectionner l'un des éléments. L'élément du menu sera mis en surbrillance
   en choisissant une couleur différente (ici, il sera rouge). Il faudra
   s'assurer qu'on ne dépasse pas les limites du menu.
-- Au lieu d'afficher tout le menu, seul quelques éléments seront affiché, mais
+- Au lieu d'afficher tout le menu, seuls quelques éléments seront affichés, mais
   la liste doit être navigable entièrement, on s'attend donc à voir apparaitre
-  les éléments qui n'était pas affiché tout en se déplacent dans la liste. La
-  navigation serra naturel.
+  les éléments qui n'étaient pas affichés tout en se déplacent dans la liste. La
+  navigation sera naturelle.
 
 Menu entièrement affiché
 ------------------------
@@ -27,7 +27,7 @@ Menu entièrement affiché
 
     class Menu(object):
 
-        menu = [ 
+        menu = [
             'item 0', 'item 1', 'item 2', 'item 3',
             'item 4', 'item 5', 'item 6', 'item 7',
         ]
@@ -90,16 +90,17 @@ Menu entièrement affiché
     if __name__ == '__main__':
         curses.wrapper(Menu)
 
-Si vous avez bien suivis le précédant chapitre, celui-ci doit aller tout seul. Puisqu'il n'y a pas beaucoup de nouveautés.
+Si vous avez bien suivi le précédent chapitre, celui-ci doit aller tout seul.
+Puisqu'il n'y a pas beaucoup de nouveautés.
 
-Le choix de `self.item = { 'current': 0 }` est surtout du à la seconde partie
+Le choix de `self.item = { 'current': 0 }` est surtout dû à la seconde partie
 qu'on va voir après, il n'est effectivement pas très justifié ici de prendre un
 dictionnaire pour un seul élément.
 
 Ce que l'on souhaite surtout, c'est garder une indication, un pointeur, sur
-l'élément courrant du menu, pour savoir où on en est dans le menu. Il faut
-également s'assurer qu'on ait pas dépasser le début ou la fin du menu, dans tel
-cas il faut empècher d'aller plus loin.
+l'élément courant du menu, pour savoir où on en est dans le menu. Il faut
+également s'assurer qu'on n'a pas dépassé le début ou la fin du menu, au quel
+cas, il faudrait empêcher d'aller plus loin.
 
 Menu déroulant
 --------------
@@ -111,7 +112,7 @@ Menu déroulant
 
     class Menu(object):
 
-        menu = [ 
+        menu = [
             'item 0', 'item 1', 'item 2', 'item 3',
             'item 4', 'item 5', 'item 6', 'item 7',
         ]
@@ -170,7 +171,7 @@ Menu déroulant
             win.refresh()
             win.getch()
             win.erase()
-            
+
         def handle_keybinding(self):
             while True:
                 ch = self.scr.getch()
@@ -197,7 +198,7 @@ problème.
     last = self.item['first'] + self.item['show']
     menu = self.menu[first:last]
 
-L'autre point à faire attention, c'est de bien s'assurer que les méthodes de
-navigation fassent ce qu'on attend. Par commodité, j'ai choisis un petit
-dictionnaire ``item`` pour repérer certains emplacement clé du menu, comme le
-nombre d'élément affiché (show).
+L'autre point où il faut faire attention, c'est de bien s'assurer que les méthodes de
+navigation fassent ce qu'on attend. Par commodité, j'ai choisi un petit
+dictionnaire ``item`` pour repérer certains emplacements clé du menu, comme le
+nombre d'éléments affichés (show).

@@ -6,8 +6,8 @@ Unittest
 Introduction
 ------------
 
-Quelques mots pour les personnes n'aillant jamais écrit de tests. Il y a
-beaucoup d'avantages à en écrire, par exemple être plus confient lors
+Quelques mots pour les personnes n'ayant jamais écrit de tests. Il y a
+beaucoup d'avantages à en écrire, par exemple être plus confiant lors
 d'amélioration de code existant, être sûr de ne rien « casser ». Il s'agit bien
 souvent (pour les tests unitaires du moins) de tester une petite partie d'un
 code, afin de s'assurer qu'on obtient les valeurs auxquelles on s'attendait. Ce
@@ -17,9 +17,9 @@ mais sachez que c'est une pratique indispensable et courante pour tout code.
 Nous allons utiliser ici un module, `unittest`_ [1]_ qui est disponible
 directement avec Python. J'aurais pu commencer avec `doctest`_ [2]_, également
 un module natif à Python, permettant d'écrire les tests directement sous forme
-de commentaire, pour les personnes intéressées, la documentation officiel est
+de commentaire, pour les personnes intéressées, la documentation officielle est
 certainement un bon endroit pour commencer. Ce billet n'est qu'un rapide aperçu
-de unittest, et ne se veux pas d'être complet.
+de unittest, et ne se veut pas complet.
 
 Le code
 -------
@@ -50,7 +50,7 @@ On écrit maintenant le test correspondant ::
 Explications
 ------------
 
-On import le module pour unittest, ainsi que la fonction qu'on a crée::
+On importe le module unittest, ainsi que la fonction qu'on a créée::
 
     import unittest
     from chiffres import add
@@ -60,10 +60,10 @@ unittest.TestCase, correspondant à la ligne suivante::
 
     class TestChiffres(unittest.TestCase):
 
-La fonction suivante est celle qui est utilisé pour le test, et doit commencer
+La fonction suivante est celle qui est utilisée pour le test, et doit commencer
 par ``test_`` pour qu'elle soit pris en compte. Le plus important, c'est de
-vérifier la valeur que la fonction retourne avec celle auquel on s'attend, et
-c'est ce que fais la ligne suivante ::
+vérifier la valeur que la fonction retourne avec celle à laquelle on s'attend, et
+c'est ce que fait la ligne suivante ::
 
     self.assertEqual(result, 42)
 
@@ -74,7 +74,7 @@ La dernière partie, correspond à l'appel de la class par unittest::
 
 Content de notre premier test, on fait un essai::
 
-    $ python test_chiffres.py 
+    $ python test_chiffres.py
     .
     ----------------------------------------------------------------------
     Ran 1 test in 0.000s
@@ -182,7 +182,7 @@ pour que le test passe maintenant avec succès::
 
 On exécute une dernière fois le test::
 
-    $ python test_chiffres.py   
+    $ python test_chiffres.py
     ...
     ----------------------------------------------------------------------
     Ran 3 tests in 0.001s
@@ -191,9 +191,9 @@ On exécute une dernière fois le test::
 
 Voilà, grâce au test, on sait que la fonction à un comportement auquel on
 s’attend, on pourrait essayer de faire quelques modification, mais avec les
-tests, on s'assure que son comportement ne change pas de façon inattendu.
+tests, on s'assure que son comportement ne change pas de façon inattendue.
 
-Note: Pour les floats et à cause du caractère parfois approximatif de leur
+Note : Pour les floats et à cause du caractère parfois approximatif de leur
 résultat, il est sûrement préférable d'utiliser ``assertAlmostEqual`` au lieu de
 ``assertEqual``
 
@@ -233,8 +233,8 @@ Liste des asserts
 On a vu jusqu'ici assertEqual et assertRaises, il en existe bien d'autre, dont
 voici la liste.
 
-- assertEqual  
-- assertNotEqual  
+- assertEqual
+- assertNotEqual
 - assertTrue
 - assertFalse
 - assertIs
@@ -253,13 +253,13 @@ voici la liste.
 Attention cependant à la compatibilité entre les versions de Python, pas mal de
 nouveautés on été introduite dans Python2.7 par exemple, ou 3.2.
 Pour aller plus loin, il est préférable de se référer à la documentation
-officiel.
+officielle.
 
 Discover
 ''''''''
 
 Ce module vient maintenant avec une nouvelle option, 'discover', permettant
-d'automatiser la recherche des différents fichier de test, je ne m'étendrais
+d'automatiser la recherche des différents fichiers de test, je ne m'étendrai
 pas sur ce détail, et on verra pourquoi dans le prochain billet.
 
 ::

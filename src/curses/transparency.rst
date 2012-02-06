@@ -4,7 +4,7 @@ Transparence avec Ncurses
 =========================
 
 J'ai recherché sur le net comment avoir la transparence avec Python et le
-module curse, mais l'information n'était pas très clair, ni dans la
+module curse, mais l'information n'était pas très claire, ni dans la
 documentation officiel, ni sur le web. C'est en lisant le code des autres que
 j'ai trouvé.
 

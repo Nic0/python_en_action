@@ -4,8 +4,8 @@ Python en Action
 
 **Préface**
 
-Ce document est issue principalement de billets pris sur mon blog, revu pour
-l'occasion. Aillant depuis quelques temps cumulé des suites de petits tutoriels
+Ce document est issu principalement de billets pris sur mon blog, revus pour
+l'occasion. Ayant depuis quelques temps cumulé des suites de petits tutoriels
 un peu sous forme de recettes, je pense qu'il pouvait être intéressant de
 les réunir sous un format PDF. Ce format s'y prêtait plutôt bien, du fait
 d'avoir traité quelques thèmes sous différents aspects, notamment avec la
@@ -17,11 +17,11 @@ Le document est sous licence libre `Créative Commun CC-BY-SA` [1]_ et puisqu'un
 PDF ne serait pas vraiment considéré comme libre sans les sources, elles
 peuvent être téléchargées sur `Github`_ [2]_. Vous avez le droit de
 le télécharger, le redistribuer, le modifier et même de l'imprimer pour le lire
-dans les toilettes. Merci de copier ce document ! Je demande juste d'être 
+dans les toilettes. Merci de copier ce document ! Je demande juste d'être
 cité, Nicolas Paris, et de faire un lien vers mon blog,
-http://www.nicosphere.net.
+http://www.nicosphere.net/ .
 
-Vous pouvez me contacter via email: nicolas.caen@gmail.com
+Vous pouvez me contacter via email : nicolas.caen@gmail.com
 
 La version de Python utilisé est généralement la 2.7, parfois la 3.2. J'ai
 généralement fait mon possible pour que ce soit clair. Une précision tout de
@@ -36,7 +36,7 @@ J'espère que ce document trouvera lecteurs, bien que ce soit mon premier
 -- Nicolas Paris
 
 .. _`Github`: https://github.com/Nic0/python_en_action
- 
+
 .. [1] http://creativecommons.org/licenses/by-sa/2.0/fr/
 .. [2] https://github.com/Nic0/python_en_action
 
@@ -75,7 +75,7 @@ Utilisation d'API
     src/api/googl
     src/api/requests
     src/api/scrapy
-    
+
 Les Tests Unitaires
 -------------------
 

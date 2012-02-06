@@ -20,14 +20,14 @@ chapitre sur nose  pour plus de détails.
 
     sudo pip install nose
 
-Pour installer coverage, la procédure est similaire, on peut déjà noté que
-coverage n'est utilisé uniquement ici pour générer l'html.
+Pour installer coverage, la procédure est similaire, on peut déjà noter que
+coverage n'est utilisé uniquement ici pour générer le code HTML.
 
 ::
 
     sudo pip install coverage
 
-Les utilisateurs d'Arch Linux pourront le retrouvé avec l'AUR
+Les utilisateurs d'Arch Linux pourront le retrouver avec l'AUR
 
 ::
 
@@ -40,7 +40,7 @@ que depuis un mois, et cette version doit certainement faire l'affaire.
 Usage console
 -------------
 
-Reprenons l'exemple précédant, une fonction add, auquel on rajoute une fonction
+Reprenons l'exemple précédent, une fonction add, auquel on rajoute une fonction
 multiply, mais sans lui rajouter de tests. La première fonction est testé de
 diverses façons (doctest, unittest, framework test de nose), alors que la seconde n'en comporte aucun.
 
@@ -59,7 +59,7 @@ Le fichier ``src/chiffres.py`` ressemble maintenant à ça::
 On utilise l'argument ``--with-coverage`` de Nose, ou tout simplement rajouter
 ``with-coverage=1`` dans le ``~/.noserc``.
 
-On effectue les tests précédemment écrit, attention à basestring qui n'existe
+On effectue les tests précédemment écrits, attention à ``basestring`` qui n'existe
 que pour Python2.x mais plus dans Python3::
 
     $ nosetests-2.7 --with-coverage
@@ -123,7 +123,7 @@ On obtiendra un résultat similaire à l'image suivante :
 Un exemple plus réel et navigable est visitable sur `ce lien`_ [3]_.
 
 Voilà pour une présentation rapide d'une utilisation un peu spécifique de Nose,
-mais pouvant être utile. 
+mais pouvant être utile.
 
 .. _`la couverture de code`: http://fr.wikipedia.org/wiki/Couverture_de_code
 .. _`ce lien`: http://nedbatchelder.com/code/coverage/sample_html/

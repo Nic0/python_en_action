@@ -3,20 +3,20 @@
 Behavior Driven Developpment avec Lettuce
 =========================================
 
-`Lettuce`_ [3]_ est principallement un portage sur Python de `Cucumber`_ [1]_.
+`Lettuce`_ [3]_ est principalement un portage sur Python de `Cucumber`_ [1]_.
 Cucumber a été écrit par la communauté de Ruby. Il permet une approche des
 tests et du développement de façon "BDD" Behavior Driven Developpement. Cet
 outil à été porté pour PHP (`Behat`_ [2]_) et pour Python. C'est une pratique
-courante, comportant son lot d'adeptes et de récalcitrant..
+courante, comportant son lot d'adeptes et de récalcitrants...
 
 Python dispose de deux outils semblable, `Lettuce`_ [3]_ et `Freshen`_ [4]_. Les deux
 projets sont actif et fonctionnel. Lettuce est un standalone, tandis que
-Freshen est un plugin de Nose (voir mes deux précédents articles consacré à
-Nose). Bien que l'utilisation est peut être plus courante pour un développement
+Freshen est un plugin de Nose (voir mes deux précédents articles consacrés à
+Nose). Bien que l'utilisation est peut-être plus courante pour un développement
 web (Django par exemple) il est possible de s'en servir en tout autre
 contexte.
 
-Le but, est d'écrire un "scénario" compréhensible par n'importe qui,
+L'objet, est d'écrire un "scénario" compréhensible par n'importe qui,
 correspondant à un comportement voulu d'une fonctionnalité, de s'assurer que le
 test échoue, puis on écrit le code correspondant, et pour finir, on s'assure
 que le test passe avec succès. Ce billet n'est qu'une approche rapide, tiré
@@ -52,26 +52,26 @@ Voici la structure avec lequel on part
         ── features
 
 
-Un peu déroutant à la première approche, mais les tests se range dans `features`.
+Un peu déroutant à la première approche, mais les tests se rangent dans `features`.
 
 L'important à comprendre, c'est qu'on va se retrouver avec deux types de fichiers.
 
 1. \*.feature: Sont les scénarios rédigé dans un anglais compréhensible par
-tous, décrivant une suite de comportement et de résultat attendu.
+tous, décrivant une suite de comportements et de résultats attendus.
 2. step.py: Le code servant à interpréter les scénarios.
 
 .. note::
 
     Il existe une coloration pour les features avec Vim, celui-ci le
-    reconnais comme syntaxe de Cucumber. Emacs et tout autre éditeurs doivent
+    reconnais comme syntaxe de Cucumber. Emacs et tout autre éditeur doit
     certainement en faire de même.
 
-Le code suivant, est là surtout pour donner une idée de la syntaxe utilisé pour
-lettuce, et du résultat obtenu. La documentation, que vous pouvez généré en
+Le code suivant, est là surtout pour donner une idée de la syntaxe utilisée pour
+lettuce, et du résultat obtenu. La documentation, que vous pouvez générer en
 local comme vu plus haut, donne un bon exemple de petit tutoriel reprenant un
 peu plus en détail.
 
-Pour mieux visualisé, voici les répertoires et fichier après écriture du code::
+Pour mieux visualiser, voici les répertoires et fichiers après écriture du code::
 
     $ tree
     .
@@ -148,13 +148,13 @@ Pour mieux visualisé, voici les répertoires et fichier après écriture du cod
         if (number == 0) or (number == 1):
             return 1
         else:
-            return number*factorial(number-1) 
+            return number*factorial(number-1)
 
 Pour exécuter les tests, on se place dans tests, puis on exécute `lettuce`.
 
 ::
 
-    $ lettuce 
+    $ lettuce
 
     Feature: Compute factorial       # features/zero.feature:1
       In order to play with Lettuce  # features/zero.feature:2
@@ -200,7 +200,7 @@ code, de s'assurer qu'il ne passe pas, et ensuite d'écrire le code
 correspondant afin que le test passe, principe du BDD.
 
 Je suis aller assez vite sur le fonctionnement car je pense que si le rapide
-aperçu vous intrigue, vous aurez de toute façon bien assez envi d'attaquer leur
+aperçu vous intrigue, vous aurez de toute façon bien assez envie d'attaquer leur
 tutoriel, et creuser les quelques pistes dont le billet était sujet, avant tout
 la présentation d'un outil, que l'explication de son fonctionnement.
 
